@@ -1,0 +1,120 @@
+application:
+  key: cMhHVkrSV0TySSt9F28VMvo6GHTcSNIq
+  payment: testing
+  ges_api: testing
+fpm:
+  pm: ondemand
+  max_children: 8
+  process_idle_timeout: 8s;
+  max_requests: 300
+  start_servers: 2
+  min_spare_servers: 1
+  max_spare_servers: 2
+settings:
+  university: Edith Cowan University
+  costcentre: 9
+  isClose: true
+  ticket:
+    student:
+      qty: 1
+      price: 0
+    guest:
+      qty: 2
+      price: 0
+    free:
+      qty: 0
+      price: 0
+  order:
+    job:
+      SendOrderConfirmationViaEmail: true
+  services:
+    StudentTicket:
+      enable: no
+      name: Registration
+      job:
+        SendStudentRegistrationViaEmail: false
+        SendStudentReminderViaEmail: false
+      nav:
+        admin:
+          show: true
+          route: graduates
+        www:
+          show: false
+    Gowning:
+      enable: yes
+      name: Academic Dress
+      nav:
+        admin:
+          show: true
+          route: dresses
+        www:
+          show: true
+          route: dress
+    GuestTicket:
+      enable: no
+      name: Guest Tickets
+      job:
+        SendTicketViaEmail: false
+      nav:
+        admin:
+          show: false
+          route: tickets
+        www:
+          show: false
+          route: ticket
+    OtherServices:
+      enable: yes
+      name: Other Services
+      nav:
+        admin:
+          show: true
+          route: services
+        www:
+          show: true
+          route: service
+      services:
+        - PhotographService
+        - Bear
+        - Flower
+        - Frame
+        - Plaque
+    Bear:
+      enable: yes
+      name: Bear
+      nav:
+        admin:
+          show: true
+        www:
+          show: true
+    Flower:
+      enable: yes
+      name: Flower
+      nav:
+        admin:
+          show: true
+        www:
+          show: true
+    Frame:
+      enable: yes
+      name: Frame
+      nav:
+        admin:
+          show: true
+        www:
+          show: true
+    Plaque:
+      enable: yes
+      name: Plaque
+      nav:
+        admin:
+          show: true
+        www:
+          show: true
+    PhotographService:
+      enable: yes
+      name: Studio Photography
+      nav:
+        admin:
+          show: true
+        www:
+          show: true
