@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>One Page Output</title>
     <style>
         #content{
@@ -12,11 +13,12 @@
     </style>
 </head>
 <body>
+
     <div id="container">
         <div id="content">
             <div id="title">Output</div><br>
             <form action="/" method="POST">
-            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <table>
                     <tr>
                         <td>University name</td>

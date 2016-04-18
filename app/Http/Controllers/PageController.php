@@ -38,11 +38,11 @@ class PageController extends Controller
         $yaml = str_replace("'", "", $yaml);
         file_put_contents('dummy/app.yaml', $yaml);
 
-        $frontPageMessage    = "Front page message " . $this->request->input('frontPageMessage', '') . "\n";
-        $welcomeMessage      = "Welcome message " . $this->request->input('welcomeMessage', '') . "\n";
-        $academicMessage     = "Academic message " . $this->request->input('academicMessage', '') . "\n";
-        $ticketMessage       = "Ticket message " . $this->request->input('ticketMessage', '') . "\n";
-        $otherServiceMessage = "Other service message " . $this->request->input('otherServiceMessage', '') . "\n";
+        $frontPageMessage    = '<p><strong style="display: block; color: #134471; font-size: 14px;">Front page message </strong>' . $this->request->input('frontPageMessage', '') . '</p>' . "\n";
+        $welcomeMessage      = '<p><strong style="display: block; color: #134471; font-size: 14px;">Welcome message </strong>' . $this->request->input('welcomeMessage', '') . '</p>' . "\n";
+        $academicMessage     = '<p><strong style="display: block; color: #134471; font-size: 14px;">Academic message </strong>' . $this->request->input('academicMessage', '') . '</p>' . "\n";
+        $ticketMessage       = '<p><strong style="display: block; color: #134471; font-size: 14px;">Ticket message </strong>' . $this->request->input('ticketMessage', '') . '</p>' . "\n";
+        $otherServiceMessage = '<p><strong style="display: block; color: #134471; font-size: 14px;">Other service message </strong>' . $this->request->input('otherServiceMessage', '') . '</p>' . "\n";
 
         $allMessages = $frontPageMessage . $welcomeMessage . $academicMessage . $ticketMessage . $otherServiceMessage;
 

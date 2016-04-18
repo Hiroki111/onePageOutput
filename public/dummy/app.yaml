@@ -11,7 +11,7 @@ fpm:
   min_spare_servers: 1
   max_spare_servers: 2
 settings:
-  university: Test University
+  university: Test University\
   costcentre: 1
   isClose: true
   ticket:
