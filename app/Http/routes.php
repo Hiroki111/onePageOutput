@@ -12,3 +12,5 @@
  */
 
 Route::get('/', 'PageController@index');
+
+Route::post('/', 'PageController@output');
