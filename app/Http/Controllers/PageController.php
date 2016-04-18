@@ -48,6 +48,16 @@ class PageController extends Controller
 
         Storage::disk('local')->put('test.blade.php', $allMessages);
         //Directory ... storage/app/public
-        return view('index');
+        return view('index', [
+            'universityName'      => $this->request->input('universityName', ''),
+            'costCenter'          => $this->request->input('costCenter', ''),
+            'frontPageMessage'    => $this->request->input('frontPageMessage', ''),
+            'welcomeMessage'      => $this->request->input('welcomeMessage', ''),
+            'academicMessage'     => $this->request->input('academicMessage', ''),
+            'ticketMessage'       => $this->request->input('ticketMessage', ''),
+            'otherServiceMessage' => $this->request->input('otherServiceMessage', ''),
+        ]);
+
+        return redirect('/')->with('data', 'some kind of data');
     }
 }

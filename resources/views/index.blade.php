@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>tinymce.init({ selector:'textarea' });</script>
     <title>One Page Output</title>
     <style>
         #content{
@@ -13,7 +14,6 @@
     </style>
 </head>
 <body>
-
     <div id="container">
         <div id="content">
             <div id="title">Output</div><br>
