@@ -59,14 +59,12 @@
             <button>Output</button>
         </form>
         @else
-        <p>the file found</p>
         <form action="/" method="POST">
             <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <table>
                 <tr>
                     <td>University name</td>
                     <td><input name="universityName" value=""></input></td>
-
                 </tr>
                 <tr>
                     <td>Cost center ID</td>
@@ -106,9 +104,5 @@
 </div>
 </body>
 
-<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script type="text/javascript">
-
-</script>
 
 </html>
