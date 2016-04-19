@@ -38,26 +38,19 @@ class PageController extends Controller
         $yaml = str_replace("'", "", $yaml);
         file_put_contents('dummy/app.yaml', $yaml);
 
-        $frontPageMessage    = '<p><strong style="display: block; color: #134471; font-size: 14px;">Front page message </strong>' . $this->request->input('frontPageMessage', '') . '</p>' . "\n";
-        $welcomeMessage      = '<p><strong style="display: block; color: #134471; font-size: 14px;">Welcome message </strong>' . $this->request->input('welcomeMessage', '') . '</p>' . "\n";
-        $academicMessage     = '<p><strong style="display: block; color: #134471; font-size: 14px;">Academic message </strong>' . $this->request->input('academicMessage', '') . '</p>' . "\n";
-        $ticketMessage       = '<p><strong style="display: block; color: #134471; font-size: 14px;">Ticket message </strong>' . $this->request->input('ticketMessage', '') . '</p>' . "\n";
-        $otherServiceMessage = '<p><strong style="display: block; color: #134471; font-size: 14px;">Other service message </strong>' . $this->request->input('otherServiceMessage', '') . '</p>' . "\n";
+        $frontPageMessage    = $this->request->input('frontPageMessage', '');
+        $welcomeMessage      = $this->request->input('welcomeMessage', '');
+        $academicMessage     = $this->request->input('academicMessage', '');
+        $ticketMessage       = $this->request->input('ticketMessage', '');
+        $otherServiceMessage = $this->request->input('otherServiceMessage', '');
 
-        $allMessages = $frontPageMessage . $welcomeMessage . $academicMessage . $ticketMessage . $otherServiceMessage;
+        Storage::disk('local')->put('frontpage.blade.php', $frontPageMessage);
+        Storage::disk('local')->put('welcome.blade.php', $welcomeMessage);
+        Storage::disk('local')->put('academic.blade.php', $academicMessage);
+        Storage::disk('local')->put('ticket.blade.php', $ticketMessage);
+        Storage::disk('local')->put('otherservice.blade.php', $otherServiceMessage);
 
-        Storage::disk('local')->put('test.blade.php', $allMessages);
-        //Directory ... storage/app/public
-        return view('index', [
-            'universityName'      => $this->request->input('universityName', ''),
-            'costCenter'          => $this->request->input('costCenter', ''),
-            'frontPageMessage'    => $this->request->input('frontPageMessage', ''),
-            'welcomeMessage'      => $this->request->input('welcomeMessage', ''),
-            'academicMessage'     => $this->request->input('academicMessage', ''),
-            'ticketMessage'       => $this->request->input('ticketMessage', ''),
-            'otherServiceMessage' => $this->request->input('otherServiceMessage', ''),
-        ]);
+        return redirect('/');
 
-        return redirect('/')->with('data', 'some kind of data');
     }
 }
